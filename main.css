@@ -1,0 +1,188 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--dRed: #ce9797;
+	--sRed: #f96262;
+	--gRed: #413a3a;
+	--gradient1-first: #ffffff;
+	--gradient1-last: #fff5f5;
+	--gradient2-first: #f8bfbf;
+	--gradient2-last: #ee8c8c;
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.header {
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.logo {
+	position: absolute;
+	height: 70px;
+	top: 5%;
+	left: 10%;
+}
+
+.logo__img {
+	position: relative;
+}
+
+.coming-soon {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	row-gap: 2em;
+	width: 60%;
+	height: 100%;
+	padding: 10%;
+	background-image: url("./assets/bg-pattern-desktop.svg");
+}
+
+.coming-soon__title {
+	font-size: 4em;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+	color: var(--gRed);
+}
+
+.coming-soon__title--red {
+	color: var(--dRed);
+}
+
+.coming-soon__paragraph {
+	width: 85%;
+	font-size: 1.2em;
+	font-weight: 400;
+	line-height: 1.5em;
+	color: var(--dRed);
+}
+
+.image {
+	width: 40%;
+	height: 100%;
+	background-color: #fff;
+	background-image: url("./assets/hero-desktop.jpg");
+	background-size: cover;
+}
+
+.form {
+	position: relative;
+	width: 85%;
+}
+
+.form__input {
+	width: 100%;
+	color: var(--gRed);
+	border: 1px solid var(--dRed);
+	padding: 1.3em 5%;
+	border-radius: 2em;
+}
+
+.form__input::placeholder {
+	color: var(--dRed);
+}
+
+.form__button {
+	position: absolute;
+	text-decoration: none;
+	top: 0;
+	right: 0;
+	width: 20%;
+	height: 100%;
+	background-image: linear-gradient(
+		135deg,
+		var(--gradient2-first),
+		var(--gradient2-last)
+	);
+	border-radius: 2em;
+}
+
+.form__arrow {
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+	padding: 1em;
+}
+
+.form__icon {
+	display: none;
+	position: absolute;
+	top: 25%;
+	right: 25%;
+	width: 24px;
+	height: 24px;
+}
+
+.form__error {
+	display: none;
+	position: absolute;
+	top: 115%;
+	left: 5%;
+	color: var(--sRed);
+}
+
+.show {
+	display: block;
+}
+
+@media screen and (max-width: 768px) {
+	.header {
+		flex-direction: column;
+		justify-content: space-around;
+		height: 90vh;
+	}
+
+	.logo {
+		position: relative;
+		top: 10%;
+		left: 5%;
+	}
+
+	.logo__img {
+		position: absolute;
+		top: 25%;
+		left: 0;
+	}
+
+	.coming-soon {
+		width: 100%;
+		height: 60%;
+		text-align: center;
+		padding: 0 10%;
+	}
+
+	.coming-soon__title {
+		font-size: 2.5em;
+	}
+
+	.coming-soon__paragraph {
+		font-size: 1.1em;
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.form {
+		width: 100%;
+	}
+
+	.image {
+		background-image: url("./assets/hero-mobile.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		order: -1;
+		width: 100%;
+		height: 40%;
+	}
+}

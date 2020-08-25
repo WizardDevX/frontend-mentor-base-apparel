@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Base Apparel Coming Soon</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="./assets/favicon-32x32.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="logo">
+        <img class="logo__img" src="./assets/logo.svg" alt="logo">
+    </div>
+
+    <div class="header">
+
+        <div class="coming-soon">
+            <h1 class="coming-soon__title"><span class="coming-soon__title--red">We're</span> coming soon</h1>
+            <p class="coming-soon__paragraph"> Hello fellow shoppers! We're currently building our new fashion store.
+                Add your email below to stay up-to-date with announcements and our launch deals.</p>
+            <div class="form">
+                <input type="text" class="form__input" placeholder="Email Address">
+                <a href="" class="form__button"><img class="form__arrow" src="./assets/icon-arrow.svg" alt="arrow"></a>
+                <img src="./assets/icon-error.svg" alt="error icon" class="form__icon">
+                <small class="form__error">Please Provide a valid email</small>
+            </div>
+        </div>
+        <div class="image"></div>
+
+    </div>
+
+    <script>
+        let input = document.querySelector(".form__input");
+        let errorIcon = document.querySelector(".form__icon");
+        let errorMessage = document.querySelector(".form__error");
+
+        input.addEventListener("blur", validate)
+
+        function validate() {
+
+            //Simple validation
+            let pattern = /(\w|\d)+@\w+.com$/g;
+
+            if (this.value.search(pattern) === -1) {
+
+                this.style.borderColor = "var(--sRed)"
+
+                errorIcon.classList.add("show")
+                errorMessage.classList.add("show")
+            } else {
+
+                this.style.borderColor = "var(--dRed)"
+
+
+                errorIcon.classList.remove("show")
+                errorMessage.classList.remove("show")
+            }
+
+
+        }
+    </script>
+
+</body>
+
+</html>
